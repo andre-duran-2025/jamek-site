@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors - Jamek Brand */
+    --primary: 220 100% 50%; /* Blue #0066FF */
+    --primary-foreground: 0 0% 100%; /* White */
+    
+    /* Secondary Colors */
+    --secondary: 220 14% 96%; /* Light Gray */
+    --secondary-foreground: 220 9% 46%; /* Dark Gray */
+    
+    /* Accent Colors */
+    --accent: 142 76% 36%; /* Green #16A34A */
+    --accent-foreground: 0 0% 100%; /* White */
+    
+    /* Background Colors */
+    --background: 0 0% 100%; /* White */
+    --foreground: 220 9% 46%; /* Dark Gray */
+    
+    /* Muted Colors */
+    --muted: 220 14% 96%; /* Light Gray */
+    --muted-foreground: 220 9% 46%; /* Medium Gray */
+    
+    /* Border & Input */
+    --border: 220 13% 91%; /* Light Border */
+    --input: 220 13% 91%; /* Input Background */
+    --ring: 220 100% 50%; /* Focus Ring */
+    
+    /* Card */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 220 9% 46%; /* Dark Gray */
+    
+    /* Popover */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 220 9% 46%; /* Dark Gray */
+    
+    /* Destructive */
+    --destructive: 0 84% 60%; /* Red */
+    --destructive-foreground: 0 0% 100%; /* White */
+    
+    /* Success */
+    --success: 142 76% 36%; /* Green */
+    --success-foreground: 0 0% 100%; /* White */
+    
+    /* Warning */
+    --warning: 38 92% 50%; /* Orange */
+    --warning-foreground: 0 0% 100%; /* White */
+    
+    /* Radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 27% 8%; /* Dark Blue */
+    --foreground: 220 9% 89%; /* Light Gray */
+    
+    --card: 220 27% 12%; /* Dark Card */
+    --card-foreground: 220 9% 89%; /* Light Text */
+    
+    --popover: 220 27% 12%; /* Dark Popover */
+    --popover-foreground: 220 9% 89%; /* Light Text */
+    
+    --primary: 220 100% 60%; /* Lighter Blue */
+    --primary-foreground: 220 27% 8%; /* Dark Text */
+    
+    --secondary: 220 27% 16%; /* Dark Secondary */
+    --secondary-foreground: 220 9% 89%; /* Light Text */
+    
+    --muted: 220 27% 16%; /* Dark Muted */
+    --muted-foreground: 220 9% 65%; /* Medium Light Text */
+    
+    --accent: 142 76% 36%; /* Green (same) */
+    --accent-foreground: 0 0% 100%; /* White */
+    
+    --destructive: 0 84% 60%; /* Red (same) */
+    --destructive-foreground: 0 0% 100%; /* White */
+    
+    --border: 220 27% 16%; /* Dark Border */
+    --input: 220 27% 16%; /* Dark Input */
+    --ring: 220 100% 60%; /* Lighter Focus Ring */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Typography */
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .heading-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+  
+  .heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+  
+  .heading-3 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight;
+  }
+  
+  .heading-4 {
+    @apply text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight;
+  }
+  
+  .body-large {
+    @apply text-lg md:text-xl leading-relaxed;
+  }
+  
+  .body-medium {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+  
+  .body-small {
+    @apply text-sm md:text-base leading-relaxed;
+  }
+}
+
+/* Container Utilities */
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  .section-padding-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+}
+
+/* Button Utilities */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 focus:ring-2 focus:ring-secondary focus:ring-offset-2;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+}
+
+/* Animation Utilities */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
